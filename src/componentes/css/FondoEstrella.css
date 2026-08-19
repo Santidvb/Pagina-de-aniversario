@@ -1,0 +1,36 @@
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(#080808 , #070707); /* Color de fondo oscuro opcional */
+  z-index: -1; /* Para que quede detrás de tu contenido */
+}
+
+.heart {
+  position: absolute;
+  color: #fd0303;
+  user-select: none;
+  pointer-events: none;
+  animation: moveDiagonal linear infinite;
+}
+
+@keyframes moveDiagonal {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--max-opacity, 0.7);
+  }
+  90% {
+    opacity: var(--max-opacity, 0.7);
+  }
+  100% {
+    /* Desplazamiento diagonal: cambia según la dirección que quieras */
+    transform: translate(-100vw, -100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

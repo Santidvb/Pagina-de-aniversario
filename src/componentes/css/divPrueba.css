@@ -1,0 +1,21 @@
+.prueba-BIG{
+    border: black solid 4px;
+    margin: 10px;
+    background: rgb(156, 238, 156);
+    width: 100%;
+    height: 300px;
+}
+.prueba-MID{
+    border: black solid 4px;
+    margin: 10px;
+    background: rgb(156, 238, 156);
+    width: 100%;
+    height: 150px;
+}
+.prueba-TINY{
+    border: black solid 4px;
+    margin: 10px;
+    background: rgb(156, 238, 156);
+    width: 100%;
+    height: 80px;
+}

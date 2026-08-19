@@ -1,0 +1,24 @@
+/*INICIO*/
+
+
+.inicio {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    color: black;
+    font-family: "otros"
+}
+
+.inicio-top{
+    display: flex;
+}
+.inicio-mid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+.inicio-bottom{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}

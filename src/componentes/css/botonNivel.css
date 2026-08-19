@@ -1,0 +1,91 @@
+button{
+    user-select: none;
+    border: 2px solid black;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    container-type: inline-size;
+}
+
+.btn-minecraft{
+    font-family: "minecraft";
+}
+.btn-series{
+    font-family: "pelis";
+    font-weight: bold;
+}
+.btn-roblox{
+    font-family: "roblox";
+}
+.btn-llamadas{
+    font-family: "comic";
+    font-weight: bold;
+}
+.btn-soulknight{
+    font-family: "soul-knight";
+}
+.btn-otros{
+    font-family: "astetik-bold";
+}
+.btn-final{
+    font-family: "mensaje-secreto";
+    font-weight: bold;
+}
+
+
+.btn-s{
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+.btn-m{
+    width: 80px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+.btn-l{
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+}
+.btn-xl{
+    width: 130px;
+    height: 70px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+
+.btn-inicio{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #9fa;
+    color: rgb(116, 245, 206);
+    background: #ff2caeb9;
+}
+.btn-inicio:active{
+    width: 100px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid rgb(169, 248, 182);
+    color: rgb(151, 253, 223);
+    background: #ff70c8ce;
+}
+.texto-inicio{
+    margin: 0;
+    font-size: 20px;
+}
+.simbolo-boton-inicio{
+    font-size: 15px;
+    font-variation-settings:
+    "wght" 600
+}

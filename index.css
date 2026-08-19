@@ -1,0 +1,117 @@
+/**FONTS**/
+
+@font-face {
+  font-family: 'mesa-minecraft';
+  src: url('./src/assets/fonts/mesaminecraft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'roblox';
+  src: url('./src/assets/fonts/roblox.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'barcode';
+  src: url('./src/assets/fonts/barcode.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'comic-bold';
+  src: url('./src/assets/fonts/comic-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'comic';
+  src: url('./src/assets/fonts/comic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'laberinto';
+  src: url('./src/assets/fonts/laberinto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'mensaje-secreto';
+  src: url('./src/assets/fonts/mensaje-secreto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'minecraft';
+  src: url('./src/assets/fonts/minecraft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'pelis';
+  src: url('./src/assets/fonts/pelis.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'roto';
+  src: url('./src/assets/fonts/roto.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'soul-knight';
+  src: url('./src/assets/fonts/soulKnight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'sucio';
+  src: url('./src/assets/fonts/sucio.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'astetik';
+  src: url('./src/assets/fonts/astetik.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'astetik-bold';
+  src: url('./src/assets/fonts/astetik-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/**BASE GENERAL**/
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    padding-top: 80px;
+    box-sizing: border-box;
+}
+p{
+  margin: 0;
+}
+
+/*  |   play_arrow   |    skip_next   |    pause    |  */
+/*  |     undo       |      redo      |    replay   |  */
+.material-symbols-outlined {
+  margin: 0;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
