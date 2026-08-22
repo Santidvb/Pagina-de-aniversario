@@ -1,7 +1,7 @@
 import { useMiContexto, type OpcionesEstado } from "./data.tsx";
 import "./css/botonNivel.css" 
 
-type TamañosBoton = "s" | "m" | "l" | "xl";
+export type TamañosBoton = "s" | "m" | "l" | "xl";
 
 interface Props {
     seccionBtn: OpcionesEstado;

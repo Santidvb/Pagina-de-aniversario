@@ -1,7 +1,11 @@
-.app-body{
+.app-body {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    min-height: 100vh; /* Fuerza a ocupar el 100% de la altura de la pantalla */
+    width: 100%;
     padding: 0;
-    overflow-y: scroll;
+    box-sizing: border-box;
+    overflow: hidden;
 }

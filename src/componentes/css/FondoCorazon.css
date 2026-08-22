@@ -8,10 +8,27 @@
   background: radial-gradient(#fac0b4 , #f8a592); /* Color de fondo oscuro opcional */
   z-index: -5; /* Para que quede detrás de tu contenido */
 }
+.star-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(#000000 , #000000); /* Color de fondo oscuro opcional */
+  z-index: -5; /* Para que quede detrás de tu contenido */
+}
 
 .heart {
   position: absolute;
   color: #fa6f99;
+  user-select: none;
+  pointer-events: none;
+  animation: moveDiagonal linear infinite;
+}
+.star {
+  position: absolute;
+  color: #fd0303;
   user-select: none;
   pointer-events: none;
   animation: moveDiagonal linear infinite;
@@ -34,3 +51,108 @@
     opacity: 0;
   }
 }
+
+
+
+
+/**.heart{
+
+  .fondo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(#fac0b4 , #f8a592); 
+    z-index: -5; 
+  }
+
+  .logo {
+    position: absolute;
+    color: #fa6f99;
+    user-select: none;
+    pointer-events: none;
+    animation: moveDiagonal linear infinite;
+  }
+}
+
+.star{
+  .fondo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(#130000 , #000000); 
+  z-index: -5; 
+}
+.logo {
+  position: absolute;
+  color: #fd0303;
+  user-select: none;
+  pointer-events: none;
+  animation: moveDiagonal linear infinite;
+}
+}
+
+
+export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo }) => {
+  const hearts = useMemo<HeartConfig[]>(() => {
+    return Array.from({ length: count }).map((_, i) => ({
+      id: i,
+      // Distribuimos el origen en la pantalla para cubrir el espacio
+      top: `${Math.random() * 140 - 20}%`,
+      left: `${Math.random() * 140 - 20}%`,
+      size: Math.random() * 26 + 20, // Tamaño entre 12px y 32px
+      duration: Math.random() * 6 + 8, // Duración de 8s a 18s
+      delay: Math.random() * -5, // Retraso negativo para que ya haya corazones en pantalla
+      opacity: Math.random() * 0.7 + 0.4, // Opacidad variable
+    }));
+  }, [count]);
+  
+    // "final" | "llamadas" | "minecraft" | "otros" | "series" | "soul knight"
+  function verificarSimbolo(modo:number) {
+    if(modo === 1) {
+        switch(tipo) {
+        case "star": return("star");
+        case "heart": return("heart");
+      }
+    }
+    if(modo === 2){
+      switch(tipo) {
+        case "star": return("⛧");
+        case "heart": return("♥");
+        case "roblox": return(<SiRoblox/>)
+      }
+    }
+  }
+    
+
+
+  return (
+      <div className={`${verificarSimbolo(1)} fondo`}>
+      {hearts.map((heart) => (
+        <span
+          key={heart.id}
+          className="logo"
+          style={{
+            top: heart.top,
+            left: heart.left,
+            fontSize: `${heart.size}px`,
+            animationDuration: `${heart.duration}s`,
+            animationDelay: `${heart.delay}s`,
+            '--max-opacity': heart.opacity,
+          } as React.CSSProperties}
+        >
+          {verificarSimbolo(2)}
+        </span>
+      ))}
+    </div>
+    
+  );
+  
+};
+
+**/

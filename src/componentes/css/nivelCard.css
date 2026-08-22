@@ -2,7 +2,71 @@
     margin: 10px;
     width: 150px;
     height: 200px;
+    max-width: 150px;
+    max-height: 200px;
     background: rgba(211, 68, 255, 0.384);
     border: 2px solid rgba(139, 7, 128, 0.87);
     border-radius: 12px;
+    flex-direction: column;
+    font-size: 10px;
+}
+
+
+.nivel-card-base-final{
+    margin: 10px;
+    width: 320px;
+    height: 170px;
+    max-width: 320px;
+    max-height: 170px;
+    background: rgba(211, 68, 255, 0.384);
+    border: 2px solid rgba(139, 7, 128, 0.87);
+    border-radius: 12px;
+    flex-direction: column;
+    font-size: 12px;
+}
+
+.nivel-card-base, .nivel-card-base-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nivel-card-base-final-img{
+    object-fit: cover;
+    object-position: center;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+.nivel-card-base-img{
+    object-fit: cover;
+    object-position: center;
+    max-width: 80px;
+    max-height: 200px;
+}
+
+.img-div-inicio{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-div-inicio-final{
+    width: 140px;
+    height: 75px;
+    background-image: url("../../assets/images/wapa2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.img-div-inicio-final, .img-div-inicio{
+    border: 2px solid black;
+    border-radius: 20px;
+    margin: 0;
 }

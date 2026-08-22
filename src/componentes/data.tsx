@@ -17,9 +17,10 @@ interface ContextoType {
     seccion: OpcionesEstado;
     cambiarSeccion: (nuevaSeccion: OpcionesEstado) => void;
     luz: boolean;
-    luzAzul: boolean;
     setLuz: React.Dispatch<React.SetStateAction<boolean>>;
-    setLuzAzul: React.Dispatch<React.SetStateAction<boolean>>;
+    nivelActual: OpcionesEstado;
+    setNivelActual: React.Dispatch<React.SetStateAction<OpcionesEstado>>;
+    cambiarNivel: (nuevoNivelActual: OpcionesEstado) => void;
 }
 
 export const Contexto = createContext<ContextoType | undefined>(undefined);
@@ -36,21 +37,25 @@ export const useMiContexto = () => {
 
 export default function Data({ children }: { children: ReactNode }) {
     const [seccion, setSeccion] = useState<OpcionesEstado>("inicio");
-    const [luzAzul, setLuzAzul] = useState<boolean>(false);
     const [luz, setLuz] = useState<boolean>(true);
+    const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
 
     const cambiarSeccion = (nuevaSeccion: OpcionesEstado) => {
         setSeccion(nuevaSeccion);
     }
-    
+    const cambiarNivel = (nuevoNivelActual: OpcionesEstado) => {
+        setNivelActual(nuevoNivelActual);
+    }
+
     return (
         <Contexto.Provider value={{
             seccion, 
             cambiarSeccion,
             luz,
-            luzAzul,
             setLuz,
-            setLuzAzul
+            nivelActual,
+            setNivelActual,
+            cambiarNivel
             }}>
             
             {children}

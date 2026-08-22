@@ -30,7 +30,7 @@ button{
     font-family: "soul-knight";
 }
 .btn-otros{
-    font-family: "astetik-bold";
+    font-family: "pro";
 }
 .btn-final{
     font-family: "mensaje-secreto";
@@ -88,4 +88,12 @@ button{
     font-size: 15px;
     font-variation-settings:
     "wght" 600
+}
+
+.btn-s, .btn-m, .btn-l, .btn-xl, .btn-inicio{
+    margin: 10px;
+}
+
+.btn-s:active, .btn-m:active, .btn-l:active, .btn-xl:active{
+    filter: brightness(1.4)
 }
