@@ -1,6 +1,21 @@
 import React, { useMemo } from 'react';
 import './css/FondoCorazon.css';
-import { SiRoblox, SiPicxy } from 'react-icons/si';
+import { SiRoblox, SiPicxy, SiCraftsman } from 'react-icons/si';
+import { MdSignalWifi4BarLock } from 'react-icons/md';
+import { BiStar } from 'react-icons/bi';
+import { GiSwordInStone } from 'react-icons/gi';
+
+
+export type DataTipoFondo =
+  | "heart" 
+  | "star" 
+  | "roblox" 
+  | "final" 
+  | "llamadas" 
+  | "minecraft" 
+  | "otros" 
+  | "series" 
+  | "soulKnight";
 
 interface HeartConfig {
   id: number;
@@ -14,10 +29,13 @@ interface HeartConfig {
 
 interface HeartsBackgroundProps {
   count?: number;
-  tipo: "heart" | "star" | "roblox" | "final" | "llamadas" | "minecraft" | "otros" | "series" | "soul knight";
+  tipo: DataTipoFondo;
 }
 
-export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo }) => {
+
+//version 2
+
+export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo}) => {
   const hearts = useMemo<HeartConfig[]>(() => {
     return Array.from({ length: count }).map((_, i) => ({
       id: i,
@@ -32,36 +50,30 @@ export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo
   }, [count]);
   
     //
-  function verificarSimbolo(modo:number) {
-    if(modo === 1) {
-        switch(tipo) {
-        case "star": return("star");
-        case "heart": return("heart");
-      }
-    }
-    if(modo === 2) {
-        switch(tipo) {
-        case "star": return("star-container");
-        case "heart": return("hearts-container");
-      }
-    }
-    if(modo === 3){
+  function verificarSimbolo() {
+
       switch(tipo) {
         case "star": return("⛧");
         case "heart": return("♥");
-        case "roblox": return(<SiRoblox/>)
-      }
+        case "roblox": return(<SiRoblox/>);
+        case "series": return("ඩ");
+        case "final": return("?");
+        case "llamadas": return(<MdSignalWifi4BarLock/>);
+        case "minecraft": return(<SiCraftsman/>);
+        case "otros": return(<BiStar/>);
+        case "soulKnight": return(<GiSwordInStone/>);
+        default: return("♥");
     }
   }
     
 
 
   return (
-    <div className={verificarSimbolo(2)}>
+    <div className={`${tipo} fondo`}>
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className={verificarSimbolo(1)}
+          className={`${tipo} simbolo`}
           style={{
             top: heart.top,
             left: heart.left,
@@ -71,7 +83,7 @@ export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo
             '--max-opacity': heart.opacity,
           } as React.CSSProperties}
         >
-          {verificarSimbolo(3)}
+          {verificarSimbolo()}
         </span>
       ))}
     </div>
@@ -79,8 +91,6 @@ export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo
   
 };
 
-export default FondoCorazon;
 
-
-
+export default FondoCorazon
 

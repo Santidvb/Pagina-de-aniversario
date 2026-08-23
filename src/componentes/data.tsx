@@ -9,7 +9,7 @@ export type OpcionesEstado =
     | "roblox"
     | "series"
     | "llamadas"
-    | "soul knight"
+    | "soulKnight"
     | "otros"
     | "final";
 
@@ -20,9 +20,23 @@ interface ContextoType {
     setLuz: React.Dispatch<React.SetStateAction<boolean>>;
     nivelActual: OpcionesEstado;
     setNivelActual: React.Dispatch<React.SetStateAction<OpcionesEstado>>;
-    cambiarNivel: (nuevoNivelActual: OpcionesEstado) => void;
+    actualizarNivel: (nuevoNivelActual: OpcionesEstado) => void;
+    cambiarPista: (nuevaPista: React.ReactNode) => void; 
+    cambiarPistaActiva: (tipo: keyof dataPistaActiva) => void;
+    pista: React.ReactNode;
+    pistaActiva: dataPistaActiva;
 }
 
+type dataPistaActiva = {
+    "roblox": boolean; 
+    "inicio": boolean; 
+    "final": boolean; 
+    "llamadas": boolean; 
+    "series": boolean; 
+    "soulKnight": boolean; 
+    "minecraft": boolean; 
+    "otros": boolean; 
+};
 export const Contexto = createContext<ContextoType | undefined>(undefined);
 
 export const useMiContexto = () => {
@@ -40,10 +54,40 @@ export default function Data({ children }: { children: ReactNode }) {
     const [luz, setLuz] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
 
+    const [pista, setPista] = useState<React.ReactNode>(
+        <>
+        Mirando las series llevamos tiempo, tiempo que no tenemos
+        ¿Acaso se lo llevó el viento? nunca lo sabremos...
+        <br />
+        Mirame a los ojos y tal vez veas la respuesta a este momento.
+        </>
+    );
+    const cambiarPista = (nuevaPista: React.ReactNode) => {
+    setPista(nuevaPista);
+    };
+
+    const [pistaActiva, setPistaActiva] = useState<dataPistaActiva>(
+        {
+            "roblox": true, 
+            "inicio": true,
+            "final": true,
+            "llamadas": true, 
+            "series": true,
+            "soulKnight": true, 
+            "minecraft": true, 
+            "otros": true 
+        }
+    );
+    function cambiarPistaActiva(tipo: keyof dataPistaActiva) {
+    setPistaActiva((estadoAnterior) => ({
+        ...estadoAnterior,            
+        [tipo]: !estadoAnterior[tipo] 
+    }));
+}
     const cambiarSeccion = (nuevaSeccion: OpcionesEstado) => {
         setSeccion(nuevaSeccion);
     }
-    const cambiarNivel = (nuevoNivelActual: OpcionesEstado) => {
+    const actualizarNivel = (nuevoNivelActual: OpcionesEstado) => {
         setNivelActual(nuevoNivelActual);
     }
 
@@ -55,7 +99,11 @@ export default function Data({ children }: { children: ReactNode }) {
             setLuz,
             nivelActual,
             setNivelActual,
-            cambiarNivel
+            actualizarNivel,
+            cambiarPista,
+            pista,
+            cambiarPistaActiva, 
+            pistaActiva
             }}>
             
             {children}

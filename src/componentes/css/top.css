@@ -1,0 +1,10 @@
+.base-fondo-top{
+    width: 100vw;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.541);
+    margin-bottom: 50px;
+    border-bottom: 5px rgba(0, 0, 0, 0.728) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

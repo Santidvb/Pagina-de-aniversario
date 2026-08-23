@@ -38,7 +38,7 @@ export default function Inicio() {
                 <NivelCard clase="nivel-card-base" tipo="series" img={seriesImg}/>
                 <NivelCard clase="nivel-card-base" tipo="roblox" img={robloxImg}/>
                 <NivelCard clase="nivel-card-base" tipo="minecraft" img={minecraftImg}/>
-                <NivelCard clase="nivel-card-base" tipo="soul knight" img={soulKnightImg}/>
+                <NivelCard clase="nivel-card-base" tipo="soulKnight" img={soulKnightImg}/>
                 <NivelCard clase="nivel-card-base" tipo="llamadas" img={llamadasImg}/>
                 <NivelCard clase="nivel-card-base" tipo="otros" img={otrosImg}/>
             </div>

@@ -1,5 +1,20 @@
 /**FONTS**/
+/*
+mesa-minecraft
+roblox
+barcode
+comic
+comic-bold
 
+mensaje-secreto
+minecraft
+pelisroto
+soul-knight
+sucio
+astetik
+astetik-bold
+pro
+*/
 @font-face {
   font-family: 'mesa-minecraft';
   src: url('./src/assets/fonts/mesaminecraft.otf') format('opentype');
@@ -103,7 +118,6 @@ body{
     align-items: center;
     overflow-y: scroll;
     overflow-x: hidden;
-    padding-top: 80px;
     box-sizing: border-box;
 }
 p, h1, h2, h3, h4, h5, h6{

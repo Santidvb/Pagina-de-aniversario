@@ -1,5 +1,5 @@
 import { useMiContexto, type OpcionesEstado } from "./data.tsx";
-import "./css/botonNivel.css" 
+import "./css/botonNivel.css";
 
 export type TamañosBoton = "s" | "m" | "l" | "xl";
 
@@ -27,7 +27,7 @@ export default function BotonNivel ({ seccionBtn, tipo }: Props) {
             case "series":  return "btn-series";
             case "roblox":  return "btn-roblox";
             case "llamadas":  return "btn-llamadas";
-            case "soul knight": return "btn-soulknight";
+            case "soulKnight": return "btn-soulknight";
             case "otros": return "btn-otros";
             case "final": return "btn-final";
             case "inicio": return "btn-inicio";

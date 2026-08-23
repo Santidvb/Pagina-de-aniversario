@@ -19,4 +19,5 @@
     color: rgb(252, 252, 252);
     font-family: "mensaje-secreto";
     font-weight: bold;
+    border-top: 2px solid rgba(12, 143, 78, 0.55);
 }

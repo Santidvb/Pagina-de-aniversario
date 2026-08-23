@@ -442,7 +442,7 @@
         width: 100vw;
         height: 100vh;
         position: fixed;
-        background: black;
+        background: rgb(227, 87, 87);
         z-index: 20;
         top: 0;
         display: flex;
@@ -460,10 +460,10 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(255, 0, 191) 2px solid;
+        border: rgb(0, 195, 255) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(255, 225, 2, 0.801);
+        background-color: rgba(125, 248, 248, 0.566);
         transition: all 1.2s ease;
         font-family: "comic";
     }
@@ -473,29 +473,29 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(248, 0, 0) 2px solid;
+        border: rgb(0, 83, 248) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(255, 225, 2, 0.795);
+        background-color: rgba(125, 248, 248, 0.566);
         transition: all 1.2s ease;
         outline: none;
     }
 
     .formulario::placeholder{
-        color:rgba(214, 67, 202, 0.616);
+        color:rgba(223, 193, 43, 0.616);
         font-family: "comic";
     }
 
     .texto-formulario{
         margin: 10px;
-        font-family: "roto";
-        color: white;
+        font-family: "laberinto";
+        color: rgb(255, 190, 38);
     }
 
     .form-base{
         width: 320px;
         height: 300px;
-        border: rgba(253, 22, 203, 0.801);
+        border: rgba(255, 0, 200, 0.801);
     }
 
     .pista-input{
@@ -504,7 +504,7 @@
         text-align:left;
         margin: 20px;
         margin-left: 35px;
-        color: #333;
+        color: #ec9f9f;
     }
 }
 .soul-knight-contraseña{
