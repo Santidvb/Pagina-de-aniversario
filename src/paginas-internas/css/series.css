@@ -1,0 +1,13 @@
+.titulo{
+    font-family: "pelis";
+    text-shadow: 2px 3px rgba(136, 130, 142, 0.575);
+}
+.texto-general{
+    max-width: 320px;
+    height: auto;
+    margin: 10px;
+}
+.imagen1{
+    width: 100px;
+    
+}

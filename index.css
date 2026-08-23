@@ -5,10 +5,10 @@ roblox
 barcode
 comic
 comic-bold
-
 mensaje-secreto
 minecraft
-pelisroto
+pelis
+roto
 soul-knight
 sucio
 astetik
@@ -150,4 +150,11 @@ p, h1, h2, h3, h4, h5, h6{
 
 .hidden{
   display: none;
+}
+
+.base-paginas-internas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "astetik";
 }
