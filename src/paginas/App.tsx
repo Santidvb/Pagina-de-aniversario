@@ -1,9 +1,7 @@
-import { useState } from 'react'
 import './css/App.css'
 import '../componentes/css/FondoCorazon.css'
 import FondoCorazon from '../componentes/FondoCorazon'
 import Contraseña from "../componentes/contraseña.tsx";
-import PruebaDiv from '../componentes/divPrueba.tsx';
 import Inicio from './inicio.tsx';
 import Footer from '../componentes/footer.tsx';
 import { useMiContexto } from '../componentes/data.tsx';

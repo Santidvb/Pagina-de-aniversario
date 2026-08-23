@@ -3,10 +3,10 @@ import { useMiContexto } from "./data";
 
 
 export function Secret({children} : {children: ReactNode}){
-    const { luzAzul, luz } = useMiContexto();
+    const { luz } = useMiContexto();
     
     return(
-            <span className={`${luzAzul && !luz ? "mensaje-secreto" : ""}`}>
+            <span className={`${!luz ? "mensaje-secreto" : ""}`}>
                 {children}
             </span>
         
@@ -14,10 +14,10 @@ export function Secret({children} : {children: ReactNode}){
 }
 
 export function Oculto({texto} : {texto: string}){
-    const { luzAzul, luz } = useMiContexto();
+    const { luz } = useMiContexto();
     
     return(
-            <span className={`${luzAzul && !luz ? "mensaje-secreto" : ""}`}>
+            <span className={`${ !luz ? "mensaje-secreto" : ""}`}>
                 {texto}
             </span>
         

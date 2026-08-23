@@ -3,7 +3,6 @@ import "./css/contraseña.css";
 import FondoCorazon, { type DataTipoFondo } from "./FondoCorazon";
 import { useMiContexto } from "./data";
 import BotonVolver from "./botonVolver";
-import { type OpcionesEstado } from "./data";
 
 interface ContraseñaProps {
     contraseña: string;
@@ -14,7 +13,7 @@ interface ContraseñaProps {
 
 export default function Contraseña({ contraseña, texto, pista, tipoFondo }: ContraseñaProps) {
     // 1. Traemos pistaActiva del contexto para saber si esta sección ya fue desbloqueada
-    const { seccion, cambiarSeccion, actualizarNivel, cambiarPistaActiva, pistaActiva } = useMiContexto();
+    const { seccion, actualizarNivel, cambiarPistaActiva, pistaActiva } = useMiContexto();
     
     // 2. Comprobamos si la sección actual requiere contraseña. 
     // (Asumiendo que pistaActiva[seccion] es true cuando está bloqueada/activa)

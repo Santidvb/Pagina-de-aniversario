@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import './css/FondoCorazon.css';
-import { SiRoblox, SiPicxy, SiCraftsman } from 'react-icons/si';
+import { SiRoblox, SiCraftsman } from 'react-icons/si';
 import { MdSignalWifi4BarLock } from 'react-icons/md';
 import { BiStar } from 'react-icons/bi';
 import { GiSwordInStone } from 'react-icons/gi';
