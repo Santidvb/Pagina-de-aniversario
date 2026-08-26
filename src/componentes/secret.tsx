@@ -24,3 +24,14 @@ export function Oculto({texto} : {texto: string}){
     );
 }
 
+
+export function O({children} : {children: ReactNode}){
+    const { luz } = useMiContexto();
+    
+    return(
+            <span className={`${!luz ? "mensaje-oculto" : "hidden"}`}>
+                {children}
+            </span>
+        
+    );
+}

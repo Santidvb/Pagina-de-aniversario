@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext} from "react";
 import "./css/contraseña.css";
 import FondoCorazon, { type DataTipoFondo } from "./FondoCorazon";
 import { useMiContexto } from "./data";
@@ -11,9 +11,13 @@ interface ContraseñaProps {
     tipoFondo: DataTipoFondo;
 }
 
+export const ContextoContraseña = createContext<undefined>(undefined);
+ 
+
+
 export default function Contraseña({ contraseña, texto, pista, tipoFondo }: ContraseñaProps) {
     // 1. Traemos pistaActiva del contexto para saber si esta sección ya fue desbloqueada
-    const { seccion, actualizarNivel, cambiarPistaActiva, pistaActiva } = useMiContexto();
+    const { seccion, actualizarNivel, cambiarPistaActiva, pistaActiva, cambiarLuz } = useMiContexto();
     
     // 2. Comprobamos si la sección actual requiere contraseña. 
     // (Asumiendo que pistaActiva[seccion] es true cuando está bloqueada/activa)
@@ -49,11 +53,12 @@ export default function Contraseña({ contraseña, texto, pista, tipoFondo }: Co
     }, [requiereContraseña]); // Dependemos de requiereContraseña
 
     const verificarContraseña = () => {
-        if (valorInput === contraseña) {
+        if (valorInput.toLowerCase() === contraseña) {
             // 3. Al acertar, actualizamos el contexto directamente.
             // Esto cambiará 'requiereContraseña' a false automáticamente en el próximo render.
             actualizarNivel(seccion);
             cambiarPistaActiva(seccion); 
+            cambiarLuz("reset");
         } else {
             alert("Contraseña Incorrecta, intenta nuevamente");
             setValorInput("");
@@ -72,7 +77,6 @@ export default function Contraseña({ contraseña, texto, pista, tipoFondo }: Co
 
     return (
         <div className={`default-fondo ${verificarContraseñaSeccion()}`}>
-            {/* Eliminé la validación redundante de estadoActualContraseña ? "fondo" : "hidden" */}
             <div className="fondo-contraseña">
                 <FondoCorazon tipo={tipoFondo} />
                 <form onSubmit={handleSubmit} className="form-base">
@@ -91,3 +95,4 @@ export default function Contraseña({ contraseña, texto, pista, tipoFondo }: Co
         </div>
     );
 }
+

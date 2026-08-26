@@ -147,6 +147,10 @@ p, h1, h2, h3, h4, h5, h6{
 .mensaje-secreto{
   color: rgba(243, 111, 255, 0.932) !important;
 }
+.mensaje-oculto{
+  color: rgba(243, 111, 255, 0.932) !important;
+  font-family: "otros";
+}
 
 .hidden{
   display: none;
@@ -157,4 +161,6 @@ p, h1, h2, h3, h4, h5, h6{
   flex-direction: column;
   align-items: center;
   font-family: "astetik";
+  max-width: 380px;
+  margin-bottom: 70px;
 }

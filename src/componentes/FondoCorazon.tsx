@@ -4,6 +4,7 @@ import { SiRoblox, SiCraftsman } from 'react-icons/si';
 import { MdSignalWifi4BarLock } from 'react-icons/md';
 import { BiStar } from 'react-icons/bi';
 import { GiSwordInStone } from 'react-icons/gi';
+import { useMiContexto } from './data';
 
 
 export type DataTipoFondo =
@@ -48,32 +49,43 @@ export const FondoCorazon: React.FC<HeartsBackgroundProps> = ({ count = 60, tipo
       opacity: Math.random() * 0.7 + 0.4, // Opacidad variable
     }));
   }, [count]);
-  
+  const {luz} = useMiContexto();
     //
   function verificarSimbolo() {
-
-      switch(tipo) {
-        case "star": return("⛧");
-        case "heart": return("♥");
-        case "roblox": return(<SiRoblox/>);
-        case "series": return("ඩ");
-        case "final": return("?");
-        case "llamadas": return(<MdSignalWifi4BarLock/>);
-        case "minecraft": return(<SiCraftsman/>);
-        case "otros": return(<BiStar/>);
-        case "soulKnight": return(<GiSwordInStone/>);
-        default: return("♥");
+    if(luz) {
+        switch(tipo) {
+          case "star": return("⛧");
+          case "heart": return("♥");
+          case "roblox": return(<SiRoblox/>);
+          case "series": return("ඩ");
+          case "final": return("?");
+          case "llamadas": return(<MdSignalWifi4BarLock/>);
+          case "minecraft": return(<SiCraftsman/>);
+          case "otros": return(<BiStar/>);
+          case "soulKnight": return(<GiSwordInStone/>);
+          default: return("♥");
+      }
+    } else if(!luz){
+      return("⛧")
     }
+      
   }
-    
+  function luzEncendidaFondo() {
+      if (luz){
+        return(tipo);
+      } else if(!luz) {
+        return(`star`);
+      }
+    }
+
 
 
   return (
-    <div className={`${tipo} fondo`}>
+    <div className={`${luzEncendidaFondo()} fondo`}>
       {hearts.map((heart) => (
         <span
           key={heart.id}
-          className={`${tipo} simbolo`}
+          className={`${luzEncendidaFondo()} simbolo`}
           style={{
             top: heart.top,
             left: heart.left,

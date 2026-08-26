@@ -43,7 +43,7 @@
 
 .series{
     &.simbolo{
-        color: #e33201;
+        color: #cf2d00;
     }
     &.fondo{
         background: radial-gradient(#3922e2 , #033667); 

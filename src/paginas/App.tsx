@@ -34,12 +34,12 @@ export default function App() {
 
   return (
     <div className='app-body'>
-      <FondoCorazon tipo={"heart"} />
+      <FondoCorazon tipo="heart" />
       <Contraseña 
-      tipoFondo={"star"} 
-      contraseña='12345' 
+      tipoFondo="star" 
+      contraseña='2108' 
       texto='¿Sabrás la primera contraseña que debes poner?' 
-      pista='Pista: Es una fecha muy especial para nosotros...'></Contraseña>
+      pista='Pista: Es una fecha muy especial para nosotros, sin tener cuenta el año...'></Contraseña>
       <Top />
       {verificarSeccion()}
       <Footer />

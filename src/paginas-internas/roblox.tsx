@@ -9,7 +9,7 @@ export default function Roblox() {
         <>
             <FondoCorazon tipo={"heart"} />
             <Contraseña 
-            contraseña="Roblox"
+            contraseña="jossnunio"
             tipoFondo="roblox"
             texto="¿De donde crees que venimos?"
             pista="Pista: Tal vez oculto en un mensaje encriptado encuentres las palabras correctas"

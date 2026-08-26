@@ -1,6 +1,5 @@
 import "./css/inicio.css"
 import NivelCard from '../componentes/nivelCard.tsx';
-
 import minecraftImg from "../assets/images/minecraft.jpg"
 import robloxImg from "../assets/images/roblox.png"
 import llamadasImg from "../assets/images/llamadas.png"
@@ -33,7 +32,6 @@ export default function Inicio() {
                     </p>
                 </div>
             </div>
-            
             <div className="inicio-mid">
                 <NivelCard clase="nivel-card-base" tipo="series" img={seriesImg}/>
                 <NivelCard clase="nivel-card-base" tipo="roblox" img={robloxImg}/>
@@ -44,7 +42,6 @@ export default function Inicio() {
             </div>
             <div className="inicio-bottom">
                 <NivelCard clase="nivel-card-base-final" tipo="final"  imgDiv={true} />
-                
             </div>
         </div>
     );

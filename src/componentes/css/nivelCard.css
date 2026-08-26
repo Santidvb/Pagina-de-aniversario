@@ -11,7 +11,6 @@
     font-size: 10px;
 }
 
-
 .nivel-card-base-final{
     margin: 10px;
     width: 320px;
@@ -37,25 +36,6 @@
     max-width: 80px;
     max-height: 80px;
 }
-
-.nivel-card-base-img{
-    object-fit: cover;
-    object-position: center;
-    max-width: 80px;
-    max-height: 200px;
-}
-
-.img-div-inicio{
-    width: 70px;
-    height: 70px;
-    overflow: hidden;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: cover;
-    object-position: center;
-}
-
 .img-div-inicio-final{
     width: 140px;
     height: 75px;
@@ -63,9 +43,6 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.img-div-inicio-final, .img-div-inicio{
     border: 2px solid black;
     border-radius: 20px;
     margin: 0;

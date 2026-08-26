@@ -9,8 +9,7 @@ interface Props {
 }
 
 export default function BotonNivel ({ seccionBtn, tipo }: Props) {
-    const { cambiarSeccion } = useMiContexto();
-
+    const { cambiarSeccion, cambiarLuz, luz, pistaActiva } = useMiContexto();
     const obtenerClaseTamaño = (tamaño: TamañosBoton): string => {
         switch (tamaño) {
             case "s":  return "btn-s";
@@ -34,12 +33,19 @@ export default function BotonNivel ({ seccionBtn, tipo }: Props) {
             default:   return "btn-inicio";
         }
     };
+    const cambiarTodo = (tipo: OpcionesEstado) => {
+        cambiarSeccion(tipo);
+        if(luz === false && pistaActiva[seccionBtn] === true){
+            cambiarLuz("luz");
+        }
+    };
 
     return (
         <div>
             <button 
                 className={`${obtenerTipo(seccionBtn)} ${obtenerClaseTamaño(tipo)}`} 
-                onClick={() => cambiarSeccion(seccionBtn)}>
+                onClick={ () => cambiarTodo(seccionBtn)}
+                >
                 {seccionBtn === "inicio" ? 
                 <p className="texto-inicio">volver<span className="material-symbols-outlined simbolo-boton-inicio">replay</span></p>
                 : <p>{seccionBtn}</p> }

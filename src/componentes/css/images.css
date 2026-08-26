@@ -1,0 +1,20 @@
+.div-imagen{
+    overflow: hidden;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid black;
+    border-radius: 20px;
+    
+}
+
+.div-general-image{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+.minWidth{
+    min-width: 380px;
+}
