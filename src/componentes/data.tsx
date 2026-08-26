@@ -56,14 +56,12 @@ export const useMiContexto = () => {
 
 
 export default function Data({ children }: { children: ReactNode }) {
-    const [seccion, setSeccion] = useState<OpcionesEstado>("series");
+    const [seccion, setSeccion] = useState<OpcionesEstado>("inicio");
     const [luz, setLuz] = useState<boolean>(true);
     const [luzAntiguo, setLuzAntiguo] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
 
-    const [pista, setPista] = useState<React.ReactNode>(
-        <>
-        Mirando las series llevamos tiempo, tiempo que no tenemos
+    const [pista, setPista] = useState<Reacirando las series llevamos tiempo, tiempo que no tenemos
         ¿Acaso se lo llevó el viento? nunca lo sabremos...
         <br />
         Mirame a los ojos y tal vez veas la respuesta a este momento.
