@@ -62,7 +62,6 @@ export default function Data({ children }: { children: ReactNode }) {
     const [luz, setLuz] = useState<boolean>(true);
     const [luzAntiguo, setLuzAntiguo] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
-
     const [pista, setPista] = useState<React.ReactNode>(
         <>
         Mirando las series llevamos tiempo, tiempo que no tenemos
