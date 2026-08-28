@@ -70,10 +70,10 @@
 
 .minecraft{
     &.simbolo{
-        color: #fd0303;
+        color: #352a22;
     }
     &.fondo{
-        background: radial-gradient(#000000 , #000000); 
+        background: linear-gradient(0deg ,#081979 , #04aeb4); 
     }
 }
 
@@ -90,7 +90,7 @@
         color: #fd0303;
     }
     &.fondo{
-        background: radial-gradient(#000000 , #000000); 
+        background: radial-gradient(#e1fcff, #f0fffe , #ffffff); 
     }
 }
 

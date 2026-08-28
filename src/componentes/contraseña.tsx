@@ -17,7 +17,7 @@ export const ContextoContraseña = createContext<undefined>(undefined);
 
 export default function Contraseña({ contraseña, texto, pista, tipoFondo }: ContraseñaProps) {
     // 1. Traemos pistaActiva del contexto para saber si esta sección ya fue desbloqueada
-    const { seccion, actualizarNivel, cambiarPistaActiva, pistaActiva, cambiarLuz } = useMiContexto();
+    const { seccion, actualizarNivel, cambiarPistaActiva, pistaActiva, cambiarLuz, desactivarTodasLasPistas } = useMiContexto();
     
     // 2. Comprobamos si la sección actual requiere contraseña. 
     // (Asumiendo que pistaActiva[seccion] es true cuando está bloqueada/activa)
@@ -57,12 +57,17 @@ export default function Contraseña({ contraseña, texto, pista, tipoFondo }: Co
             // 3. Al acertar, actualizamos el contexto directamente.
             // Esto cambiará 'requiereContraseña' a false automáticamente en el próximo render.
             actualizarNivel(seccion);
-            cambiarPistaActiva(seccion); 
+            cambiarPistaActiva(1, seccion); 
             cambiarLuz("reset");
+        } else if(valorInput.toLowerCase() === "te amo mucho <3"){
+            desactivarTodasLasPistas();
         } else {
             alert("Contraseña Incorrecta, intenta nuevamente");
             setValorInput("");
         }
+        
+        
+        
     };
 
     const handleSubmit = (e: React.FormEvent) => {

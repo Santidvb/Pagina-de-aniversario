@@ -1,5 +1,5 @@
-.titulo{
-    font-family: "pelis";
+.titulo-series{
+    font-family: "pelis" !important;
     text-shadow: 2px 3px rgba(136, 130, 142, 0.575);
 }
 .texto-general{

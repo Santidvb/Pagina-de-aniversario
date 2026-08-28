@@ -1,0 +1,19 @@
+.titulo-roblox{
+    font-family: "roblox" !important;
+    text-shadow: none;
+    -webkit-text-stroke: 0.1px rgb(24, 23, 23);
+    background: linear-gradient(180deg, #ffffff 0%, #646263 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+.texto-general{
+    max-width: 320px;
+    height: auto;
+    margin: 10px;
+}
+.imagen1{
+    width: 100px;
+    
+}

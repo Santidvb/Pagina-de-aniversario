@@ -24,11 +24,12 @@ interface ContextoType {
     setNivelActual: React.Dispatch<React.SetStateAction<OpcionesEstado>>;
     actualizarNivel: (nuevoNivelActual: OpcionesEstado) => void;
     cambiarPista: (nuevaPista: React.ReactNode) => void; 
-    cambiarPistaActiva: (tipo: keyof dataPistaActiva) => void;
+    cambiarPistaActiva: (number: number, tipo: keyof dataPistaActiva ) => void;
     cambiarLuz: (tipo: "luz" | "ambas" | "reset") => void;
     pista: React.ReactNode;
     pistaActiva: dataPistaActiva;
     setPistaActiva: React.Dispatch<React.SetStateAction<dataPistaActiva>>;
+    desactivarTodasLasPistas: () => void;
 }
 
 type dataPistaActiva = {
@@ -40,6 +41,7 @@ type dataPistaActiva = {
     "soulKnight": boolean; 
     "minecraft": boolean; 
     "otros": boolean; 
+    "inexistente": boolean;
 };
 
 
@@ -56,7 +58,7 @@ export const useMiContexto = () => {
 
 
 export default function Data({ children }: { children: ReactNode }) {
-    const [seccion, setSeccion] = useState<OpcionesEstado>("series");
+    const [seccion, setSeccion] = useState<OpcionesEstado>("minecraft");
     const [luz, setLuz] = useState<boolean>(true);
     const [luzAntiguo, setLuzAntiguo] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
@@ -95,16 +97,35 @@ export default function Data({ children }: { children: ReactNode }) {
             "series": true,
             "soulKnight": true, 
             "minecraft": true, 
-            "otros": true 
+            "otros": true,
+            "inexistente": true
         }
     );
     
-    function cambiarPistaActiva(tipo: keyof dataPistaActiva) {
-    setPistaActiva((estadoAnterior) => ({
-        ...estadoAnterior,            
-        [tipo]: !estadoAnterior[tipo] 
-    }));
-}
+    function cambiarPistaActiva( number: number, tipo: keyof dataPistaActiva = "inexistente") {
+        if(number === 1){
+            setPistaActiva((estadoAnterior) => ({
+                ...estadoAnterior,            
+                [tipo]: !estadoAnterior[tipo] 
+            }));
+        } 
+        if(number === 2){
+            setPistaActiva((estadoAnterior) => ({
+                ...estadoAnterior,            
+                [tipo]: false,
+            }));
+        }
+    }
+    function desactivarTodasLasPistas(){
+        cambiarPistaActiva(2, "final");
+        cambiarPistaActiva(2, "roblox");
+        cambiarPistaActiva(2, "minecraft");
+        cambiarPistaActiva(2, "series");
+        cambiarPistaActiva(2, "otros");
+        cambiarPistaActiva(2, "soulKnight");
+        cambiarPistaActiva(2, "llamadas");
+        cambiarPistaActiva(2, "inicio");
+    }
   
     const cambiarSeccion = (nuevaSeccion: OpcionesEstado) => {
         setSeccion(nuevaSeccion);
@@ -119,6 +140,20 @@ export default function Data({ children }: { children: ReactNode }) {
                 <>
                     Yo creo que Vigenere sabría como descifrar este problema...
                     Que lástima que no lo conozcamos, no sabemos quien es, donde vive, a que se dedica o siquiera si existe...
+                </>
+            );
+            break;
+            case "roblox": setPista(
+                <>
+                    Ha aparecido en varias foto y videos, tengo muchisimas <br/>
+                    fotos de el ¿Acaso sabrás quien es del que hablo yo? <br/>
+                    Pudiste haberlo conocido...
+                </>
+            );
+            break;
+            case "minecraft": setPista(
+                <>
+
                 </>
             );
         }
@@ -142,6 +177,7 @@ export default function Data({ children }: { children: ReactNode }) {
             cambiarLuz, 
             luzAntiguo,
             setLuzAntiguo,
+            desactivarTodasLasPistas
             }}>
             
             {children}

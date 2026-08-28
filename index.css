@@ -122,6 +122,7 @@ body{
 }
 p, h1, h2, h3, h4, h5, h6{
   margin: 0;
+  text-align: center;
 }
 
 /*  |   play_arrow   |    skip_next   |    pause    |  */
@@ -143,13 +144,40 @@ p, h1, h2, h3, h4, h5, h6{
   border: 1px rgb(247, 0, 255); 
   border-radius: 50px;
 }
+.hr-roblox{
+  background: rgba(146, 148, 148, 0.747);
+  width: 320px;
+  height: 2px;
+  border: 1px rgb(112, 111, 112); 
+  border-radius: 50px;
+}
+.hr-minecraft{
+  background: rgba(2, 122, 8, 0.747);
+  width: 320px;
+  height: 3px;
+  border: 1px rgb(0, 0, 0); 
+  border-radius: 50px;
+}
+.hr-series{
+  background: rgba(114, 5, 202, 0.747);
+  width: 320px;
+  height: 3px;
+  border: 1px rgb(238, 236, 236); 
+  border-radius: 50px;
+}
+:root{
+  --blanco: #ffffff !important;
+  --rosaPastel: rgba(243, 111, 255, 0.932) !important;
+  --negro: #000000 !important;
+}
+
 
 .mensaje-secreto{
-  color: rgba(243, 111, 255, 0.932) !important;
+  color:  var(--rosaPastel);
 }
 .mensaje-oculto{
-  color: rgba(243, 111, 255, 0.932) !important;
   font-family: "otros";
+  user-select: none;
 }
 
 .hidden{
@@ -163,4 +191,21 @@ p, h1, h2, h3, h4, h5, h6{
   font-family: "astetik";
   max-width: 380px;
   margin-bottom: 70px;
+}
+
+.row{
+  display: flex;
+  gap: 10px;
+  max-width: 360px;
+  min-width: 360px;
+  margin: 10px;
+  justify-content: center;
+}
+.column{
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  max-width: 360px;
+  min-width: 360px;
+  align-items: center;
 }
