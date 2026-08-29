@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-box">
-        <p>Pista: {pista}</p>
+        <p className="texto-footer">Pista: {pista}</p>
       </div>
     </footer>
   );

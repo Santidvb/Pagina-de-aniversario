@@ -58,7 +58,7 @@ export const useMiContexto = () => {
 
 
 export default function Data({ children }: { children: ReactNode }) {
-    const [seccion, setSeccion] = useState<OpcionesEstado>("minecraft");
+    const [seccion, setSeccion] = useState<OpcionesEstado>("soulKnight");
     const [luz, setLuz] = useState<boolean>(true);
     const [luzAntiguo, setLuzAntiguo] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
@@ -152,9 +152,18 @@ export default function Data({ children }: { children: ReactNode }) {
             break;
             case "minecraft": setPista(
                 <>
-
+                    Hoja, papel, investigar y mucha paciencia... <br/>
+                    Yo sé que podés {"<3"} <br/>
+                    Otra pista: A veces hay que ver más en donde se reflejan los recuerdos para saber la respuesta, del pasado se aprende.
                 </>
             );
+            break;
+            case "soulKnight": setPista(
+                <>
+                    ¿Acaso eso es todo? dificil encontrar una respuesta aqui, si tan solo supiera donde puede haber un codigo de 8 digitos que especifica una fecha de nacimiento importante te podría ayudar de alguna forma...
+                </>
+            );
+            break;
         }
     }, [nivelActual])
 
