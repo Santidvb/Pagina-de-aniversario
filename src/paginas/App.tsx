@@ -13,7 +13,7 @@ import Minecraft from '../paginas-internas/minecraft.tsx';
 import Otros from '../paginas-internas/otros.tsx';
 import Roblox from '../paginas-internas/roblox.tsx';
 import SoulKnight from '../paginas-internas/soul-knight.tsx';
-
+import {useEffect} from "react"
 
 export default function App() {
 
@@ -31,15 +31,18 @@ export default function App() {
       default: return(<Inicio />);
     }
   }
-
+  useEffect(() => {
+      window.scrollTo(0, 0);
+   }, [seccion])
+  
   return (
     <div className='app-body'>
       <FondoCorazon tipo="heart" />
       <Contraseña 
       tipoFondo="star" 
-      contraseña='2108' 
+      contraseña='21/08' 
       texto='¿Sabrás la primera contraseña que debes poner?' 
-      pista='Pista: Es una fecha muy especial para nosotros, sin tener cuenta el año...'></Contraseña>
+      pista='Pista: Es una fecha muy especial para nosotros, sin tener cuenta el año... (XX/XX)'></Contraseña>
       <Top />
       {verificarSeccion()}
       <Footer />

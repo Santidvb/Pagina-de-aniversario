@@ -61,10 +61,11 @@
 
 .llamadas{
     &.simbolo{
-        color: #fd0303;
+        color: #e7e7e733;
+        font-family: "sucio";
     }
     &.fondo{
-        background: radial-gradient(#000000 , #000000); 
+        background: radial-gradient(#cfcfcf, #a0a0a0, #575757); 
     }
 }
 
@@ -79,10 +80,10 @@
 
 .otros{
     &.simbolo{
-        color: #fd0303;
+        color: #ffd103;
     }
     &.fondo{
-        background: radial-gradient(#000000 , #000000); 
+        background: radial-gradient(#0407ca , #020374); 
     }
 }
 .soulKnight{

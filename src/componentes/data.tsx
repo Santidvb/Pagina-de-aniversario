@@ -58,7 +58,7 @@ export const useMiContexto = () => {
 
 
 export default function Data({ children }: { children: ReactNode }) {
-    const [seccion, setSeccion] = useState<OpcionesEstado>("soulKnight");
+    const [seccion, setSeccion] = useState<OpcionesEstado>("inicio");
     const [luz, setLuz] = useState<boolean>(true);
     const [luzAntiguo, setLuzAntiguo] = useState<boolean>(true);
     const [nivelActual, setNivelActual] = useState<OpcionesEstado>("inicio");
@@ -164,10 +164,25 @@ export default function Data({ children }: { children: ReactNode }) {
                 </>
             );
             break;
+            case "llamadas":
+                <>
+                    Puedes encontrar la respuesta en medio de la oscuridad, allí el mensaje secreto se mostrará...
+                </>
+            break;
+            case "otros":
+                <>
+                    Observar bien las imagenes de todas las galerias podría ayudar...<br/>
+                    Quiza más de cerca también...
+                </>
+            break;
+            case "final":
+                <>
+                    Siempre puedes poner "Te amo mucho {"<3"}" en la parte donde pones alguna contraseña para desactivar todas ¡Felicidades mi vida!
+                </>
+            break;
         }
     }, [nivelActual])
-
-
+ 
     return (
         <Contexto.Provider value={{
             seccion, 

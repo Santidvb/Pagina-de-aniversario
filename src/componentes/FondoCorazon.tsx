@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
 import './css/FondoCorazon.css';
 import { SiRoblox } from 'react-icons/si';
-import { MdSignalWifi4BarLock } from 'react-icons/md';
 import { BiStar } from 'react-icons/bi';
 import { useMiContexto } from './data';
 
 import Pasto from "../assets/images/pasto.webp";
+import Discord from "../assets/images/discord.webp"
+import Whatsapp from "../assets/images/llamadas.png"
+
 import among1 from "../assets/images/among1.webp";
 import among2 from "../assets/images/among2.webp";
 import among3 from "../assets/images/among3.webp";
@@ -63,6 +65,7 @@ import soul39 from "../assets/images/soul39.webp";
 import soul40 from "../assets/images/soul40.webp";
 import soul41 from "../assets/images/soul41.webp";
 
+
 export const soulArray = [
   soul1, soul2, soul3, soul4, soul5, soul6, soul7, soul8, soul9, soul10,
   soul11, soul12, soul13, soul14, soul15, soul16, soul17, soul18, soul19,
@@ -75,6 +78,10 @@ const amongImages = [
   among1, among2, among3, among4, among5, among6, among7,
   among8, among9, among10, among11, among12, among13, among14
 ];
+
+const llamadasLogos = [
+  Discord, Whatsapp
+]
 
 export type DataTipoFondo =
   | "heart" 
@@ -97,6 +104,8 @@ interface HeartConfig {
   opacity: number;
   amongImg: string;
   soulImg: string;
+  llamadasImg: string;
+  randomLlamadas: number;
 }
 
 interface HeartsBackgroundProps {
@@ -119,6 +128,8 @@ const FondoCorazonComponent: React.FC<HeartsBackgroundProps> = ({ count = 60, ti
       opacity: Math.random() * 0.7 + 0.4,
       amongImg: amongImages[Math.floor(Math.random() * amongImages.length)],
       soulImg: soulArray[Math.floor(Math.random() * soulArray.length)],
+      llamadasImg: llamadasLogos[Math.floor(Math.random() * llamadasLogos.length)],
+      randomLlamadas: Math.floor(Math.random() * 100),
     }));
   }, [count]);
 
@@ -133,7 +144,11 @@ const FondoCorazonComponent: React.FC<HeartsBackgroundProps> = ({ count = 60, ti
       case "roblox": return <SiRoblox />;
       case "series": return <img src={heart.amongImg} width={22} alt="Among Us" />;
       case "final": return "?";
-      case "llamadas": return <MdSignalWifi4BarLock />;
+      case "llamadas": if (heart.randomLlamadas < 97) {
+                          return <img src={heart.llamadasImg} width={heart.size} alt="Llamadas" />;
+                            } else {
+                              return "04/01/2007";
+                            }
       case "minecraft": return <img src={Pasto} width={30} alt="Pasto" />;
       case "otros": return <BiStar />;
       case "soulKnight": return <img src={heart.soulImg} width={35} alt="Soul Knight" />;

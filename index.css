@@ -172,7 +172,22 @@ p, h1, h2, h3, h4, h5, h6{
   border: 1px rgb(238, 236, 236); 
   border-radius: 50px;
 }
-
+.hr-llamadas{
+  background: linear-gradient(90deg, #27c500, #002fff, #27c500);
+  background-size: 200% 100%;
+  animation: rgbBar 3s linear infinite;
+  width: 320px;
+  height: 3px;
+  border: 1px rgb(238, 236, 236); 
+  border-radius: 50px;
+}
+.hr-otros{
+  background: rgba(5, 230, 218, 0.747);
+  width: 320px;
+  height: 3px;
+  border: 1px rgb(238, 236, 236); 
+  border-radius: 50px;
+}
 
 
 :root{
@@ -218,4 +233,15 @@ p, h1, h2, h3, h4, h5, h6{
   max-width: 360px;
   min-width: 360px;
   align-items: center;
+  margin-left: 10px;
+}
+
+
+@keyframes rgbBar {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: -200% 0%;
+  }
 }

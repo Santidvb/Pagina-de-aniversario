@@ -162,7 +162,7 @@
         width: 100vw;
         height: 100vh;
         position: fixed;
-        background: black;
+        background: radial-gradient(#345, #312, #233);
         z-index: 20;
         top: 0;
         display: flex;
@@ -180,10 +180,10 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(255, 0, 191) 2px solid;
+        border: rgb(0, 248, 0) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(0, 255, 0, 0.795);
+        background-color: #61ff5b8a;
         transition: all 1.2s ease;
         font-family: "comic";
     }
@@ -193,23 +193,29 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(248, 0, 0) 2px solid;
+        border: rgb(0, 4, 248) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(0, 255, 0, 0.795);
+        background-color: #5b63ff8a;
         transition: all 1.2s ease;
         outline: none;
     }
 
     .formulario::placeholder{
-        color:rgba(214, 67, 202, 0.616);
+        color:rgba(67, 69, 214, 0.616);
         font-family: "comic";
+        transition: all 1.2s ease;
+    }
+    .formulario:focus::placeholder{
+        color:rgba(72, 214, 67, 0.616);
+        font-family: "comic";
+        transition: all 1.2s ease;
     }
 
     .texto-formulario{
         margin: 10px;
         font-family: "roto";
-        color: white;
+        color: rgb(3, 19, 252);
     }
 
     .form-base{
@@ -224,7 +230,7 @@
         text-align:left;
         margin: 20px;
         margin-left: 35px;
-        color: #333;
+        color: #f703e2;
     }
 }
 .minecraft-contraseña{
@@ -320,10 +326,10 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(255, 0, 191) 2px solid;
+        border: rgb(195, 127, 250) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(95, 200, 241, 0.795);
+        background-color: rgba(153, 0, 255, 0.534);
         transition: all 1.2s ease;
         font-family: "comic";
     }
@@ -333,16 +339,16 @@
         padding: 10px;
         padding-left: 4px;
         font-size: 18px;
-        border: rgb(248, 0, 0) 2px solid;
+        border: rgb(195, 127, 250) 2px solid;
         border-radius: 10px;
-        color: rgba(255, 0, 212, 0.795);
-        background-color: transparent;
+        color: rgba(95, 200, 241, 0.795);
+        background-color: rgba(153, 0, 255, 0.534);
         transition: all 1.2s ease;
         outline: none;
     }
 
     .formulario::placeholder{
-        color:rgba(214, 67, 202, 0.616);
+        color:rgba(245, 157, 237, 0.616);
         font-family: "comic";
     }
 
@@ -364,7 +370,7 @@
         text-align:left;
         margin: 20px;
         margin-left: 35px;
-        color: #333;
+        color: #802ddf;
     }
 }
 .roblox-contraseña{
