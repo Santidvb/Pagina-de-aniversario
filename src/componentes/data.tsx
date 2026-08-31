@@ -164,21 +164,24 @@ export default function Data({ children }: { children: ReactNode }) {
                 </>
             );
             break;
-            case "llamadas":
+            case "llamadas": setPista(
                 <>
                     Puedes encontrar la respuesta en medio de la oscuridad, allí el mensaje secreto se mostrará...
                 </>
+                );
             break;
-            case "otros":
+            case "otros": setPista(
                 <>
                     Observar bien las imagenes de todas las galerias podría ayudar...<br/>
                     Quiza más de cerca también...
                 </>
+                );
             break;
-            case "final":
+            case "final": setPista(
                 <>
                     Siempre puedes poner "Te amo mucho {"<3"}" en la parte donde pones alguna contraseña para desactivar todas ¡Felicidades mi vida!
                 </>
+                );
             break;
         }
     }, [nivelActual])
